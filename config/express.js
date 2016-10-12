@@ -53,6 +53,7 @@ module.exports = function(){
 
 	app.use(express.static('./public'));
 
+	require('./socketio')(server, io, mongoStore);
 	return server;
 };
 //创建express应用对象
