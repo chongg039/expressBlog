@@ -1,16 +1,21 @@
 var config = require('./config'),
+	http = require('http'),
+	socketio = require('socket.io'),
 	express = require('express'),
 	morgan = require('morgan'),
 	compress = require('compression'),
 	bodyParser = require('body-parser'),
 	methodOverride = require('method-override'),
 	session = require('express-session'),
+	MongoStore = require('connect-mongo')(session),
 	passport = require('passport'),
 	flash = require('connect-flash');
 
 
 module.exports = function(){
 	var app = express();
+	var server = http.createServer(app);
+	var io = socketio.listen(server);
 
 	if (process.env.NODE_ENV === 'development') { //判定系统环境是开发环境
 		app.use(morgan('dev'));
@@ -24,10 +29,15 @@ module.exports = function(){
 	app.use(bodyParser.json());
 	app.use(methodOverride()); //上面这三个中间件不区分环境，一定会加载
 
+	var mongoStore = new MongoStore({
+		db: db.connection.db
+	});
+
 	app.use(session({
 		saveUninitialized: true,
 		resave: true,
-		secret: config.sessionSecret
+		secret: config.sessionSecret,
+		store: mongoStore
 	}));
 
 	app.set('views', './app/views'); //视图文件存储路径
@@ -43,6 +53,6 @@ module.exports = function(){
 
 	app.use(express.static('./public'));
 
-	return app;
+	return server;
 };
 //创建express应用对象

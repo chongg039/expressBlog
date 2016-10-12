@@ -5,10 +5,11 @@ var mongoose = require('./config/mongoose'),
 	passport = require('./config/passport');
 
 var db = mongoose();
+var app = express(db);
 var app = express();
 var passport = passport();
-app.listen(80);
+app.listen(3002);
 
 module.exports = app;
 
-console.log('Server is running at http://localhost:80');
+console.log('Server is running at http://localhost:3002');
