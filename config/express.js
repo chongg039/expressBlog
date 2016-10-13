@@ -12,7 +12,7 @@ var config = require('./config'),
 	flash = require('connect-flash');
 
 
-module.exports = function(){
+module.exports = function(db){
 	var app = express();
 	var server = http.createServer(app);
 	var io = socketio.listen(server);
