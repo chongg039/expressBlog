@@ -9,8 +9,8 @@ angular.module('articles').controller('ArticlesController', ['$scope',
 				content: this.content
 			});
 
-			article.$save(function(response){
-				$location.path('articles/' + response._id);
+			article.$save(function(callback){
+				$location.path('articles/' + callback._id);
 			}, function(errorResponse){
 				$scope.error = errorResponse.data.message;
 			});

@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-<html xmlns:ng="http://angularjs.org">
+<meta charset="UTF-8" />
+<html xmlns:ng="http://angularjs.org" style="height: 100%">
 	<head>
-		<title><%= title %></title>
+		<title>创萌工作室<%= title %></title>
+		<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+		<link rel="shortcut icon" href="/pictures/favicon.ico"/>
+		<link rel="bookmark" href="/pictures/favicon.ico"/>
 	</head>
 	<body>
+
+		<div id="topbar">
+			<a id="menu" href="#"></a>
+	    	<a id="github" href="https://github.com/CM-Studio"></a>
+		</div>
+	    <div id="logo"></div>
+		<div id="footer"></div>
 
 		<section ng-view></section>
 		
 		<script type="text/javascript">
 			window.user = <%- user || 'null' %>
 		</script>
-		
+
 		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 		<script type="text/javascript" src="/lib/angular/angular.js"></script>
 		<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
