@@ -4,24 +4,42 @@
 	<title>
 		<%=title %>
 	</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="././css/cm.css">
 </head>
 <body>
-	<% for(var i in messages) { %>
-		<div class="flash"><%= messages[i] %></div>
-	<% } %>
-	<form action="/signin" method="post">
-		<div>
-			<label>Username:</label>
-			<input type="text" name="username" />
-		</div>
-		<div>
-			<label>Password:</label>
-			<input type="password" name="password" />
-		</div>
-		<div>
-			<input type="submit" value="Sign in" />
-		</div>
-	</form>
+	<!--<div id="topbar">
+		<a id="menu" href="#"></a>
+    	<a id="github" href="https://github.com/CM-Studio"></a>
+	</div>
+    <div id="logo"></div>
+	<div id="footer"></div>-->
 
+	<div class="container">
+		<% for(var i in messages) { %>
+			<div class="flash"><%= messages[i] %></div>
+		<% } %>
+		<form class="signin" action="/signin" method="post">
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<div class="inputUsername">
+				<label for="inputUsername"></label>
+				<input type="text" class="form-control" name="username" placeholder="Username" />
+			</div>
+			<div class="inputPassword">
+				<label for="inputPassword"></label>
+				<input type="password" class="form-control" name="password" placeholder="Password" />
+			</div>
+			<div style="margin-top: 15px;">
+				<input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign in"></button>
+			</div>
+			<div style="margin-top: 15px;">
+				<input type="button" value="Do not have account ?" class="btn btn-lg btn-primary btn-block" onclick="window.location.href='/signup'"> 
+			</div>
+		</form>
+	</div>
+
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	
 </body>
 </html>

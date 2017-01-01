@@ -1,8 +1,7 @@
 <section ng-controller=ExampleController>
 
 	<div data-ng-show="!authentication.user">
-		<a href="/signup">Signup</a>
-		<a href="/signin">Signin</a>
+		<input type="button" value="加入我们！" class="btn btn-lg btn-primary btn-block" onclick="window.location.href='/signin'"> 
 	</div>
 	<div data-ng-show="authentication.user">
 		<h1>Hello <span data-ng-bind="authentication.user.username"></span></h1>
@@ -14,6 +13,5 @@
 		</ul>
 	</div>
 
-	<input type=text id=text1 ng-model=name>
-	<input type=text id=text2 ng-model=name>
 </section>
+

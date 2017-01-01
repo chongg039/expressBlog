@@ -1,21 +1,39 @@
 <section data-ng-controller="ChatController">
-	<div data-ng-repeat="message in messages" data-ng-switch="message.type">
-		<strong data-ng-switch-when='status'>
-			<span data-ng-bind="message.create | date:'mediumTime'"></span>
-			<span data-ng-bind="message.username"></span>
-			<span>is</span>
-			<span data-ng-bind="message.text"></span>
-		</strong>
-		<span data-ng-switch-default>
-			<span data-ng-bind="message.created | date:'mediumTime'"></span>
-			<span data-ng-bind="message.username"></span>
-			<span>:</span>
-			<span data-ng-bind="message.text"></span>
-		</span>
-	</div>
+	<div class="chat">
+		<div class="chat-view">
 
-	<form ng-submit="sendMessage();">
-		<input type="text" data-ng-model="messageText">
-		<input type="submit">
-	</form>
+		<div  class="chat-heading">
+			<h3>公共聊天室</h3>
+		</div>
+
+			<div data-ng-repeat="message in messages" data-ng-switch="message.type">
+				<strong data-ng-switch-when='status'>
+					<span data-ng-bind="message.create | date:'mediumTime'"></span>
+					<span data-ng-bind="message.username"></span>
+					<span>is</span>
+					<span data-ng-bind="message.text"></span>
+				</strong>
+				<span data-ng-switch-default style="font-size: 15px;">
+					<span data-ng-bind="message.created | date:'mediumTime'"></span>
+					<span data-ng-bind="message.username"></span>
+					<span>:</span>
+					<span data-ng-bind="message.text"></span>
+					<span><br></span>
+					<span></span>
+				</span>
+			</div>
+		</div>
+		
+		<div class="row chat-submit">
+			<div class="col-lg-12">
+    			<form class="input-group" ng-submit="sendMessage();">
+      				<input type="text" class="form-control" data-ng-model="messageText">
+      				<span class="input-group-btn">
+        				<button class="btn btn-default" type="submit">发送</button>
+      				</span>
+    			</form><!-- /input-group -->
+  			</div><!-- /.col-lg-6 -->
+		</div>
+
+	</div>
 </section>

@@ -2,21 +2,26 @@
 <meta charset="UTF-8" />
 <html xmlns:ng="http://angularjs.org" style="height: 100%">
 	<head>
-		<title>创萌工作室<%= title %></title>
+		<title>创萌工作室</title>
 		<link rel="stylesheet" type="text/css" href="/css/cm.css" />
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
 		<link rel="shortcut icon" href="/pictures/favicon.ico"/>
 		<link rel="bookmark" href="/pictures/favicon.ico"/>
 	</head>
 	<body>
 
-		<div id="topbar">
+		<!--<div id="topbar">
 			<a id="menu" href="#"></a>
 	    	<a id="github" href="https://github.com/CM-Studio"></a>
-		</div>
-	    <div id="logo"></div>
-		<div id="footer"></div>
+		</div>-->
 
-		<section ng-view></section>
+	    <!--<div id="logo"></div>-->
+
+
+
+		<section id="showInfo" ng-view></section>
+
+		<!--<div id="footer"></div>-->
 		
 		<script type="text/javascript">
 			window.user = <%- user || 'null' %>
@@ -48,5 +53,9 @@
 		<script type="text/javascript" src="/chat/config/chat.client.routes.js"></script>
 
 		<script type="text/javascript" src="/application.js"></script>
+
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<script src="/lib/marked/lib/marked.js"></script>
 	</body>
 </html>

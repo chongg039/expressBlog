@@ -1,3 +1,4 @@
+<script src="lib/marked.js"></script>
 <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
 	<h1 data-ng-bind="article.title"></h1>
 	<div data-ng-show="authentication.user._id == article.creator._id">
@@ -10,5 +11,14 @@
 		<em>by</em>
 		<em data-ng-bind="article.creator.fullName"></em>
 	</small>
-	<p data-ng-bind="article.content"></p>
+	<p data-ng-bind="article.content" id="contenttt">
+		<script>
+			marked(article.content);
+		</script>
+	</p>
+	<script>
+		document.getElementById('contenttt').innerHTML = 
+			marked(article.content);
+
+	</script>
 </section>

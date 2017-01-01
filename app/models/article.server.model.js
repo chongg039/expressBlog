@@ -1,5 +1,7 @@
 var mongoose = require('mongoose'),
-	Schema = mongoose.Schema;
+	Schema = mongoose.Schema,
+	marked = require('marked');
+
 
 var ArticleSchema = new Schema({
 	created: {

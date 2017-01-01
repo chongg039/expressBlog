@@ -1,5 +1,7 @@
 var mongoose = require('mongoose'),
-	Article = mongoose.model('Article');
+	Article = mongoose.model('Article'),
+	marked = require('marked'),
+	markdown = require('markdown').markdown;
 
 var getErrorMessage = function(err){
 	if(err.errors){

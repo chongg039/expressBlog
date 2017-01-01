@@ -1,13 +1,51 @@
 body{margin:0px;}
 body{margin:0px;}
 body{
-	background-image: url(/pictures/bg.jpg);
+	background-color: #cfcfcf;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
 	height: 100%;
 }	
+.signup{
+	max-width: 330px;
+	padding: 15px;
+	margin: 20% auto;
+	position: relative;	
+}
+.signin{
+	max-width: 330px;
+	padding: 15px;
+	margin: 20% auto;
+	position: relative;	
+}
+.signin.inputPassword{
+	margin-top: 10px;
+}
+.chat{
+	position: relative;
+	margin-top: -10%;
+	width:40%;
+	height:30%;
+	min-width: 576px;
+	min-height: 600px;
+	display: block;
+	margin-right: auto;
+	margin-left:auto;
+	background-color: #eee;
+	border-style: solid;
+	border-color: #ddd;
+	border
+}
+.chat-view{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.chat-submit{
+	position: absolute;
+	bottom: 3px;
+}
 #footer{
 	position: absolute;
 	bottom: 3px;
@@ -20,7 +58,7 @@ body{
 }
 #logo{
 	position: relative;
-	top: 35%;
+	top: 25%;
 	width:30%;
 	height:30%;
 	
@@ -74,4 +112,10 @@ a#github:hover{
 	background-size: 100%;
 	background-position: center center;
 	background-repeat: no-repeat;
+}
+#showInfo{
+	max-width: 330px;
+	padding: 15px;
+	margin: 20% auto;
+	position: relative;
 }
